@@ -46,7 +46,7 @@ xEffect represents the effect of the event on the person.
 xReact represents their reaction to the event.
 '''
 relations = ["xIntent", "xNeed", "xWant", "xEffect", "xReact"]
-rels = ["x_intent:", "x_need:", "x_want:", "x_effect:", "x_react:"]
+rels = ["x_intent: ", "x_need: ", "x_want: ", "x_effect: ", "x_react: "]
 
 knowledge_origin = "Don't rush to reply, I can provide the following additional knowledge to help you provide a better reply. The following are the definitions of the five commonsense relations, followed by the content of the five relations extracted from the existing conversation. You can combine them and the dialogue context generates the final reply."
 
@@ -108,7 +108,7 @@ def get_conv(m_name, context):
     others = get_commonsense(comet, sen)
 
     for rel, con in zip(rels, others):
-        add_info += rel + con + '\n'
+        add_info += rel + str(con) + '\n'
     # print(add_info)
 
     context_list.append({
