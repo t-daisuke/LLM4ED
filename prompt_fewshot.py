@@ -35,8 +35,8 @@ len_train = len(data_train_dialog)
 shot1 = random.randint(0, len_train-1)
 shot5 = random.sample(range(0,len_train), 5)
 
-tmp = data_train_dialog[shot1]
-tmp.append(data_train_target[shot1].strip())
+tmp = data_train_dialog[shot1] #dialogからランダムな行を取得
+tmp.append(data_train_target[shot1].strip()) #targetからランダムな行を取得、ただし各行をstrip()で空白を除去
 
 ### for 1-shot
 Instance = "Instance:\n"
